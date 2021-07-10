@@ -15,7 +15,7 @@ var jwt=require('jsonwebtoken');
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use('static',express.static('public'));
-// app.use(express.static('react_frontend/build'));
+app.use(express.static('frontend/build'));
 
 const Logger=function(req,res,next){
     req.requestTime =new Date();
@@ -63,9 +63,9 @@ app.get('/home',(req,res)=>{
 })
 
 
-// app.get('/*',(req,res)=>{
-//     res.sendFile(__dirname+'/react_frontend/build/index.html');
-// })
+app.get('/*',(req,res)=>{
+    res.sendFile(__dirname+'/frontend/build/index.html');
+})
 
 // app.get('/admin/users',isAdmin,(req,res)=>{
 
