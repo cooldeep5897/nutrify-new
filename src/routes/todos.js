@@ -10,6 +10,13 @@ router.get('/createmeal',(req,res)=>{
     res.render('createMeal');
 })
 
+router.get('/home',(req,res)=>{
+    res.json({
+        email:req.dbUsers.email,
+        maxcal:req.dbUsers.MaxCal
+    })
+})
+
 router.post('/createMeal',(req,res)=>{
     console.log("in createMeal");
     const meal=req.body;
@@ -80,7 +87,7 @@ router.get('/fetchmeal',(req,res)=>{
 router.post('/fetchmeal',(req,res)=>{
     console.log("in fetchmeal");
     const meal=req.body;
-    meal.email=req.userDetails.email;
+    meal.email=req.dbUsers.email;
     console.log('meal.emil',meal.email);
     todosModel.fetchMeal(meal,(err,data) => {
         if (err){

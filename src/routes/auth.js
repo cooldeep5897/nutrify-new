@@ -13,6 +13,7 @@ router.post('/signup',(req,res)=>{
             })
         }
         else{
+            res.status(201);
             res.redirect('/auth/signin');
         }
 
@@ -53,7 +54,7 @@ router.post('/signin',(req,res)=>{
                         email:data.email,
                         role:'ADMIN'
                     },'secret');
-                    res.cookie('token',token)
+                    res.cookie('token',token);
                     res.json({
                         success:true,
                         token

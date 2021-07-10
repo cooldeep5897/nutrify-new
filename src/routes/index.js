@@ -1,5 +1,6 @@
 var router=require('express').Router();
 var jwt=require('jsonwebtoken');
+var dbClient=require('../db/index');
 
 const authRouter =require('./auth');
 const todoRouter =require('./todos');
@@ -17,14 +18,19 @@ const isAdmin=function(req,res,next){
     next();
 }
 
-const verifyToken=function(req,res,next){
-    if(req.headers.authorization){
-        const token=req.headers.authorization.split(' ')[1];
+const verifyToken= async function(req,res,next){
+    if(req.cookies.token){
+        const token=req.cookies.token;
         const userDetails= jwt.verify(token,'secret');
         
         console.log('userDetails in routes index',userDetails.email);
         if(userDetails.email){
-            req.userDetails=userDetails; 
+            //req.dbUsers=userDetails;
+            const users = dbClient.get('users');
+            const dbUsers=await users.findOne({email:userDetails.email});
+            req.dbUsers=dbUsers;
+            // req.userDetails=userDetails; 
+
             next();
             // res.render('home',{email: userDetails.email});
         }else{

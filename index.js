@@ -2,6 +2,7 @@
 var express=require('express');
 var app=express();
 var jwt=require('jsonwebtoken');
+var cookieParser = require('cookie-parser')
 
 // var session = require('express-session');
 // app.use(session({
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 app.use('static',express.static('public'));
 app.use(express.static('frontend/build'));
+app.use(cookieParser())
 
 const Logger=function(req,res,next){
     req.requestTime =new Date();
