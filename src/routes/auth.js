@@ -53,11 +53,12 @@ router.post('/signin',(req,res)=>{
                         email:data.email,
                         role:'ADMIN'
                     },'secret');
+                    res.cookie('token',token)
                     res.json({
                         success:true,
                         token
                     })
-                    res.render('home', data); 
+                    // res.render('home', data); 
             }else{
                 res.json(data);
             }
