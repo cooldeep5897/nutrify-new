@@ -1,8 +1,8 @@
 import React,{ useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
-const Home=()=>{
-     console.log('in home');
+const CreateMeals=()=>{
+     console.log('in meals');
     const history=useHistory();
     const [userData,setUserData]=useState({});
 
@@ -14,7 +14,7 @@ const Home=()=>{
     
     const callHome= async ()=>{
         try {
-            const res=await fetch('/todos/home',{
+            const res=await fetch('/todos/createMeal',{
                 method:'GET',
                 headers:{
                     
@@ -62,16 +62,24 @@ const Home=()=>{
     }
 }
 
-    return(
-        <div className="user" >
-            <h1 class="user__title">hello { userData.email}</h1>
-            <p>Max calories allowed: {userData.maxcal}</p>
-        <br></br>
-        <a href="/createmeal">Create Meal </a><br></br>
-        <a href="/todos/updatemeal">Update Meal</a><br></br>
-        <a href="/todos/deletemeal">Delete Meal</a><br></br>
-        </div>
-        )
+return(
+    <div  className="user">
+         <header className="user__header"> <h1 class="user__title">***** Login *****</h1></header>
+        <form className="form" action="" onSubmit={PostData}>
+        <div class="form__group">
+        <input className='form__input' placeholder="Email" type="email" autoComplete="off" name="email"
+        value={user.email}
+        onChange={handelInput}
+        /></div>
+       <div class="form__group">
+        <input className='form__input' placeholder="Password" type="password" autoComplete="off"  name="password"
+        value={user.password}
+        onChange={handelInput}
+        /></div>
+        <button class="btn" type="submit">Sign Up</button>
+    </form>
+    </div>
+)
 
 }
-export default Home;
+export default CreateMeals;

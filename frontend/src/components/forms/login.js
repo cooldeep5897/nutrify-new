@@ -18,14 +18,6 @@ const handelInput =(e)=>{
 
 }
 
-//    const submitForm=(e)=>{
-//        e.preventDefault();
-//         const newEntry={email:email,password:password};
-
-//         setAllEntry([...allEntry,newEntry]);
-//         console.log(allEntry);
-//    }
-
     const PostData= async (e)=>{
         e.preventDefault();
 
@@ -67,8 +59,6 @@ const handelInput =(e)=>{
             /></div>
             <button class="btn" type="submit">Sign Up</button>
         </form>
-        <div>
-        </div>
         </div>
     )
 }
