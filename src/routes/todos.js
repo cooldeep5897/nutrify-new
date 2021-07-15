@@ -20,7 +20,7 @@ router.get('/home',(req,res)=>{
 router.post('/createMeal',(req,res)=>{
     console.log("in createMeal");
     const meal=req.body;
-    meal.email=req.userDetails.email;
+    meal.email=req.dbUsers.email;
     todosModel.createMeal(meal,(err,data) => {
         console.log('err',err);
         if (err){
@@ -35,6 +35,7 @@ router.post('/createMeal',(req,res)=>{
 
     })
 })
+
 router.post('/updatemeal',(req,res)=>{
     console.log("in createMeal");
     const meal=req.body;
