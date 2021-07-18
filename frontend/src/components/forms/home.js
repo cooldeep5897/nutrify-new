@@ -64,7 +64,7 @@ const Home=()=>{
 
     return(
         <div className="user" >
-            <h1 class="user__title">hello { userData.email}</h1>
+            <h1 class="user__title">Hello { userData.email}</h1>
             <p>Max calories allowed: {userData.maxcal}</p>
         <br></br>
         <a href="/createmeal">Create Meal </a><br></br>

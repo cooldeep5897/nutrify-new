@@ -6,7 +6,8 @@ const CreateMeals=()=>{
         const history=useHistory();
         const [user,setUser]= useState({
             mealname:"",
-            calories:""
+            calories:"",
+            mealid:""
         });
     
     
@@ -27,7 +28,7 @@ const CreateMeals=()=>{
             var yyyy = today.getFullYear();
 
             today =  yyyy+ '-' + mm + '-' + dd ;
-        const {mealname, calories }=user;
+        const {mealname, calories ,mealid }=user;
     
         const res=await fetch('/todos/createMeal',{
             method:"POST",
@@ -35,7 +36,7 @@ const CreateMeals=()=>{
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({
-                mealname,mealid:2, calories, date:today
+                mealname,mealid , calories, date:today
             })
         });
 
@@ -85,6 +86,11 @@ return(
         <div class="form__group">
         <input className='form__input' placeholder="mealname" type="text" autoComplete="off" name="mealname"
         value={user.mealname}
+        onChange={handelInput}
+        /></div>
+        <div class="form__group">
+        <input className='form__input' placeholder="Meal ID" type="number" autoComplete="off"  name="mealid"
+        value={user.mealid}
         onChange={handelInput}
         /></div>
        <div class="form__group">
