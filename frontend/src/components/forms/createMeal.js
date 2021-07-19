@@ -36,7 +36,7 @@ const CreateMeals=()=>{
                 "Content-Type":"application/json"
             },
             body:JSON.stringify({
-                mealname,mealid , calories, date:today
+                mealname, calories, date:today
             })
         });
 
@@ -88,11 +88,11 @@ return(
         value={user.mealname}
         onChange={handelInput}
         /></div>
-        <div class="form__group">
+        {/* <div class="form__group">
         <input className='form__input' placeholder="Meal ID" type="number" autoComplete="off"  name="mealid"
         value={user.mealid}
         onChange={handelInput}
-        /></div>
+        /></div> */}
        <div class="form__group">
         <input className='form__input' placeholder="calories" type="number" autoComplete="off"  name="calories"
         value={user.calories}

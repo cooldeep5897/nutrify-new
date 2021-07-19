@@ -7,7 +7,7 @@ const createMeal = async (meal,callback) =>{
    try { 
        const meals = dbClient.get('meals');
    await meals.insert({
-        meal_id:meal.mealid,
+        // meal_id:meal.mealid,
         email:meal.email,
         date:meal.date,
         mealname:meal.mealname,
