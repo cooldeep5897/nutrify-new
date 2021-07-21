@@ -5,7 +5,8 @@ const Home=()=>{
      console.log('in home');
     const history=useHistory();
     const [userData,setUserData]=useState({});
-    // const [calData,setCalData]=useState({});
+    const [calData,setCalData]=useState({});
+    console.log("after useState");
     useEffect(()=>{
         callHome();
         PostData();
@@ -59,14 +60,15 @@ const Home=()=>{
         console.log("in home mealsfetched");
         console.log(data.meals);
         // history.push('/home');
-        var totcal=0
-         {data.meals.map((cal,index)=>{
+        let totcal=0
+        {data.meals.map((cal,index)=>{
              totcal+=parseInt(cal.calories);
-            return(cal.calories,
-                
-                console.log(cal.calories) )
+                console.log(cal.calories) ;
             
         })}
+        setCalData(totcal);
+        // console.log(calData);
+        // console.log(userData);
         console.log('calorie',totcal);
     }
 }
@@ -74,8 +76,8 @@ const Home=()=>{
     return(
         <div className="user" >
             <h1 class="user__title">Hello { userData.email}</h1>
-            <p>Max calories allowed: {userData.maxcal}</p><br></br>
-            <p>Calories Consumed{userData.totcal}</p>
+            <p>Max calories allowed: {userData.maxcal}</p>
+            <p>Calories Consumed</p>
         <br></br>
         <a href="/createmeal">Create Meal </a><br></br>
         <a href="/todos/updatemeal">Update Meal</a><br></br>
