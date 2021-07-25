@@ -1,5 +1,6 @@
 import React,{ useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import { NavLink } from 'react-router-dom';
 
 const Home=()=>{
      console.log('in home');
@@ -78,8 +79,26 @@ const Home=()=>{
             <h1 class="user__title">Hello { userData.email}</h1>
             <p>Max calories allowed: {userData.maxcal}</p>
             <p>Calories Consumed: {calData}</p>
-        <br></br>
-        <a href="/createmeal">Create Meal </a><br></br>
+        
+        <form className="form">
+            <div className="form__group">
+            <NavLink to="/createmeal" activeClassName="active">
+                <button className="btn" type="button" >Create Meal</button>
+            </NavLink></div>
+        </form>
+        <form className="form">
+            <div className="form__group">
+            <NavLink to="/createmeal" activeClassName="active">
+                <button className="btn" type="button" >Create Meal</button>
+            </NavLink></div>
+        </form>
+        <form className="form">
+            <div className="form__group">
+            <NavLink to="/createmeal" activeClassName="active">
+                <button className="btn" type="button" >Create Meal</button>
+            </NavLink></div>
+        </form>
+
         <a href="/todos/updatemeal">Update Meal</a><br></br>
         <a href="/todos/deletemeal">Delete Meal</a><br></br>
         </div>

@@ -88,21 +88,6 @@ body {
     }
 }
 
-a:link, a:visited {
-    background-color: white;
-    width: 100%;
-    color: green;
-    padding: 14px 25px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border: rgb(29, 28, 28);
-  }
-  
-  /* a:hover, a:active {
-    background-color: blue;
-  } */
-
 @keyframes NO {
   from, to {
     -webkit-transform: translate3d(0, 0, 0);
