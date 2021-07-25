@@ -5,7 +5,7 @@ const Home=()=>{
      console.log('in home');
     const history=useHistory();
     const [userData,setUserData]=useState({});
-    const [calData,setCalData]=useState({});
+    const [calData,setCalData]=useState("");
     console.log("after useState");
     useEffect(()=>{
         callHome();
@@ -77,7 +77,7 @@ const Home=()=>{
         <div className="user" >
             <h1 class="user__title">Hello { userData.email}</h1>
             <p>Max calories allowed: {userData.maxcal}</p>
-            <p>Calories Consumed</p>
+            <p>Calories Consumed: {calData}</p>
         <br></br>
         <a href="/createmeal">Create Meal </a><br></br>
         <a href="/todos/updatemeal">Update Meal</a><br></br>
