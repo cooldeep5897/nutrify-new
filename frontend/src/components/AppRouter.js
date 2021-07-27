@@ -4,6 +4,7 @@ import Login from '../components/forms/login';
 import HomePage from './HomePage';
 import Home from './forms/home';
 import CreateMeals from './forms/createMeal';
+import Showmeals from './forms/showMeals';
 
 const AppRouter = () => {
   return (
@@ -16,6 +17,8 @@ const AppRouter = () => {
           <Route path="/login" component={Login} />
           <Route path="/home" component={Home}/>
           <Route path="/createmeal" component={CreateMeals}/>
+          
+          <Route path="/showmeals" component={Showmeals}/>
         </Switch>
       </div>
     </BrowserRouter>
