@@ -88,29 +88,6 @@ const Showmeals=()=>{
             } )
         }</ul>
         
-        
-        <form className="form">
-            <div className="form__group">
-            <NavLink to="/createmeal" activeClassName="active">
-                <button className="btn" type="button" >Create Meal</button>
-            </NavLink></div>
-        </form>
-        <form className="form">
-            <div className="form__group">
-            <NavLink to="/createmeal" activeClassName="active">
-                <button className="btn" type="button" >Create Meal</button>
-            </NavLink></div>
-        </form>
-        <form className="form">
-            <div className="form__group">
-            <NavLink to="/createmeal" activeClassName="active">
-                <button className="btn" type="button" >Create Meal</button>
-            </NavLink></div>
-        </form>
-
-
-        <a href="/todos/updatemeal">Update Meal</a><br></br>
-        <a href="/todos/deletemeal">Delete Meal</a><br></br>
         </div>
         )
 
