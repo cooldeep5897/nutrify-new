@@ -4,7 +4,7 @@ var dbClient=require('../db/index');
 
 const authRouter =require('./auth');
 const todoRouter =require('./todos');
-const adminRouter =require('./admin');
+// const adminRouter =require('./admin');
 
 const isAdmin=function(req,res,next){
 
@@ -43,6 +43,6 @@ const verifyToken= async function(req,res,next){
 
 router.use('/auth',authRouter);
 router.use('/todos',verifyToken,todoRouter); 
-router.use('/admin',isAdmin,verifyToken,adminRouter); 
+// router.use('/admin',verifyToken,adminRouter); 
 
 module.exports= router;
