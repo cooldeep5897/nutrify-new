@@ -62,7 +62,7 @@ router.post('/signin',(req,res)=>{
                         token
                     })
                     // res.render('home', data); 
-            }else{
+            }else{ console.log( "user sign in failed");
                 res.json(data);
             }
         }

@@ -34,7 +34,7 @@ const handelInput =(e)=>{
     });
 
     const data=await res.json();
-    if (data.error) {
+    if (!data.success) {
         alert(data.message);
     } else {
         console.log("in logins");
