@@ -83,24 +83,21 @@ const Home=()=>{
         <form className="form">
             <div className="form__group">
             <NavLink to="/createmeal" activeClassName="active">
-                <button className="btn" type="button" >Create Meal</button>
+                <button className="btn" type="button" >Add Meal</button>
             </NavLink></div>
         </form>
         <form className="form">
             <div className="form__group">
-            <NavLink to="/createmeal" activeClassName="active">
-                <button className="btn" type="button" >Create Meal</button>
+            <NavLink to="/showmeals" activeClassName="active">
+                <button className="btn" type="button" >show Meal</button>
             </NavLink></div>
         </form>
         <form className="form">
             <div className="form__group">
-            <NavLink to="/createmeal" activeClassName="active">
-                <button className="btn" type="button" >Create Meal</button>
+            <NavLink to="/deletemeals" activeClassName="active">
+                <button className="btn" type="button" >Delete Meal</button>
             </NavLink></div>
         </form>
-
-        <a href="/showmeals">show Meal</a><br></br>
-        <a href="/todos/deletemeal">Delete Meal</a><br></br>
         </div>
         )
 

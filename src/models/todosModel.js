@@ -57,13 +57,13 @@ const deleteMeal = async (meal,callback) =>{
        
        const dbUsers=await meals.findOne({
            email:meal.email,
-           meal_id:meal.mealid
+           _id:meal.id
     });
         console.log("meal found",dbUsers);
        if(dbUsers){
         await meals.remove({
             email:meal.email,
-            meal_id:meal.mealid
+            _id:meal.id
         })
             callback(null,{
                 success:true,

@@ -62,7 +62,7 @@ router.get('/deletemeal',(req,res)=>{
 router.post('/deletemeal',(req,res)=>{
     console.log("in deletemeal");
     const meal=req.body;
-    meal.email=req.userDetails.email;
+    meal.email=req.dbUsers.email;
     todosModel.deleteMeal(meal,(err,data) => {
         if (err){
             res.json({
